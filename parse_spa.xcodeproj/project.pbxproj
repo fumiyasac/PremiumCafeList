@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE2EFAFB1C306E3A00214931 /* DisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2EFAFA1C306E3A00214931 /* DisplayController.swift */; };
+		DE4BBF7C1C32CB6E009B9CBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4BBF7B1C32CB6E009B9CBF /* SignUpViewController.swift */; };
 		DE9B5FB51C20C3E900F3A53D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9B5FB41C20C3E900F3A53D /* AppDelegate.swift */; };
 		DE9B5FB71C20C3E900F3A53D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9B5FB61C20C3E900F3A53D /* ViewController.swift */; };
 		DE9B5FBA1C20C3E900F3A53D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9B5FB81C20C3E900F3A53D /* Main.storyboard */; };
@@ -28,6 +30,9 @@
 		DEDAF2D01C22349900A3FFB6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDAF2CF1C22349900A3FFB6 /* AudioToolbox.framework */; };
 		DEDAF2D21C2234A600A3FFB6 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDAF2D11C2234A600A3FFB6 /* libz.tbd */; };
 		DEDAF2D41C2234B400A3FFB6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDAF2D31C2234B400A3FFB6 /* libsqlite3.tbd */; };
+		DEE282121C324039004E61E9 /* LoginText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE282111C324039004E61E9 /* LoginText.swift */; };
+		DEE282161C328DED004E61E9 /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE282151C328DEC004E61E9 /* ColorDefinition.swift */; };
+		DEE282181C328E1A004E61E9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE282171C328E1A004E61E9 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE2EFAFA1C306E3A00214931 /* DisplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayController.swift; sourceTree = "<group>"; };
+		DE4BBF7B1C32CB6E009B9CBF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = parse_spa/SignUpViewController.swift; sourceTree = "<group>"; };
 		DE9B5FB11C20C3E900F3A53D /* parse_spa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parse_spa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9B5FB41C20C3E900F3A53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE9B5FB61C20C3E900F3A53D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +82,9 @@
 		DEDAF2CF1C22349900A3FFB6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DEDAF2D11C2234A600A3FFB6 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		DEDAF2D31C2234B400A3FFB6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		DEE282111C324039004E61E9 /* LoginText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginText.swift; path = parse_spa/LoginText.swift; sourceTree = "<group>"; };
+		DEE282151C328DEC004E61E9 /* ColorDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorDefinition.swift; path = parse_spa/ColorDefinition.swift; sourceTree = "<group>"; };
+		DEE282171C328E1A004E61E9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = parse_spa/LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +126,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE2EFB011C30C3D700214931 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				DEE282171C328E1A004E61E9 /* LoginViewController.swift */,
+				DE4BBF7B1C32CB6E009B9CBF /* SignUpViewController.swift */,
+				DEE282111C324039004E61E9 /* LoginText.swift */,
+				DEE282151C328DEC004E61E9 /* ColorDefinition.swift */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		DE9B5FA81C20C3E900F3A53D = {
 			isa = PBXGroup;
 			children = (
+				DE2EFB011C30C3D700214931 /* Libraries */,
 				DEDAF2B71C22277F00A3FFB6 /* Parse */,
 				DEDAF2B81C22278700A3FFB6 /* Frameworks */,
 				DE9B5FB31C20C3E900F3A53D /* parse_spa */,
@@ -143,6 +165,7 @@
 			children = (
 				DE9B5FB41C20C3E900F3A53D /* AppDelegate.swift */,
 				DE9B5FB61C20C3E900F3A53D /* ViewController.swift */,
+				DE2EFAFA1C306E3A00214931 /* DisplayController.swift */,
 				DE9B5FB81C20C3E900F3A53D /* Main.storyboard */,
 				DE9B5FBB1C20C3E900F3A53D /* Assets.xcassets */,
 				DE9B5FBD1C20C3E900F3A53D /* LaunchScreen.storyboard */,
@@ -328,8 +351,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE282181C328E1A004E61E9 /* LoginViewController.swift in Sources */,
+				DE4BBF7C1C32CB6E009B9CBF /* SignUpViewController.swift in Sources */,
+				DEE282121C324039004E61E9 /* LoginText.swift in Sources */,
 				DE9B5FB71C20C3E900F3A53D /* ViewController.swift in Sources */,
+				DEE282161C328DED004E61E9 /* ColorDefinition.swift in Sources */,
 				DE9B5FB51C20C3E900F3A53D /* AppDelegate.swift in Sources */,
+				DE2EFAFB1C306E3A00214931 /* DisplayController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
