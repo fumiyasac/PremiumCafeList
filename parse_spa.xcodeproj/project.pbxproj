@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		DE2EFAFB1C306E3A00214931 /* DisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2EFAFA1C306E3A00214931 /* DisplayController.swift */; };
 		DE4BBF7C1C32CB6E009B9CBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4BBF7B1C32CB6E009B9CBF /* SignUpViewController.swift */; };
+		DE4BBF801C35FE1F009B9CBF /* FirstDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4BBF7E1C35FE1F009B9CBF /* FirstDisplayCell.swift */; };
+		DE4BBF811C35FE1F009B9CBF /* FirstDisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4BBF7F1C35FE1F009B9CBF /* FirstDisplayCell.xib */; };
+		DE4BBF841C35FE78009B9CBF /* SecondDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4BBF821C35FE78009B9CBF /* SecondDisplayCell.swift */; };
+		DE4BBF851C35FE78009B9CBF /* SecondDisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4BBF831C35FE78009B9CBF /* SecondDisplayCell.xib */; };
 		DE9B5FB51C20C3E900F3A53D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9B5FB41C20C3E900F3A53D /* AppDelegate.swift */; };
 		DE9B5FB71C20C3E900F3A53D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9B5FB61C20C3E900F3A53D /* ViewController.swift */; };
 		DE9B5FBA1C20C3E900F3A53D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9B5FB81C20C3E900F3A53D /* Main.storyboard */; };
@@ -16,6 +20,10 @@
 		DE9B5FBF1C20C3E900F3A53D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9B5FBD1C20C3E900F3A53D /* LaunchScreen.storyboard */; };
 		DE9B5FCA1C20C3EA00F3A53D /* parse_spaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9B5FC91C20C3EA00F3A53D /* parse_spaTests.swift */; };
 		DE9B5FD51C20C3EA00F3A53D /* parse_spaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9B5FD41C20C3EA00F3A53D /* parse_spaUITests.swift */; };
+		DEC4D49B1C45B0850021557A /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4D4991C45B0840021557A /* CommentCell.swift */; };
+		DEC4D49C1C45B0850021557A /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC4D49A1C45B0840021557A /* CommentCell.xib */; };
+		DEC4D49E1C47B6700021557A /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4D49D1C47B6700021557A /* CommentController.swift */; };
+		DEC4D4A01C493B140021557A /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4D49F1C493B140021557A /* AddController.swift */; };
 		DEDAF2BC1C2233C100A3FFB6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDAF2B91C2233C100A3FFB6 /* Bolts.framework */; };
 		DEDAF2BD1C2233C100A3FFB6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDAF2BA1C2233C100A3FFB6 /* Parse.framework */; };
 		DEDAF2BE1C2233C100A3FFB6 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDAF2BB1C2233C100A3FFB6 /* ParseUI.framework */; };
@@ -55,6 +63,10 @@
 /* Begin PBXFileReference section */
 		DE2EFAFA1C306E3A00214931 /* DisplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayController.swift; sourceTree = "<group>"; };
 		DE4BBF7B1C32CB6E009B9CBF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = parse_spa/SignUpViewController.swift; sourceTree = "<group>"; };
+		DE4BBF7E1C35FE1F009B9CBF /* FirstDisplayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstDisplayCell.swift; sourceTree = "<group>"; };
+		DE4BBF7F1C35FE1F009B9CBF /* FirstDisplayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstDisplayCell.xib; sourceTree = "<group>"; };
+		DE4BBF821C35FE78009B9CBF /* SecondDisplayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondDisplayCell.swift; sourceTree = "<group>"; };
+		DE4BBF831C35FE78009B9CBF /* SecondDisplayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondDisplayCell.xib; sourceTree = "<group>"; };
 		DE9B5FB11C20C3E900F3A53D /* parse_spa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parse_spa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9B5FB41C20C3E900F3A53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE9B5FB61C20C3E900F3A53D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +80,10 @@
 		DE9B5FD01C20C3EA00F3A53D /* parse_spaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = parse_spaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9B5FD41C20C3EA00F3A53D /* parse_spaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parse_spaUITests.swift; sourceTree = "<group>"; };
 		DE9B5FD61C20C3EA00F3A53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEC4D4991C45B0840021557A /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		DEC4D49A1C45B0840021557A /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		DEC4D49D1C47B6700021557A /* CommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
+		DEC4D49F1C493B140021557A /* AddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddController.swift; sourceTree = "<group>"; };
 		DEDAF2B91C2233C100A3FFB6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = parse_spa/Bolts.framework; sourceTree = "<group>"; };
 		DEDAF2BA1C2233C100A3FFB6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = parse_spa/Parse.framework; sourceTree = "<group>"; };
 		DEDAF2BB1C2233C100A3FFB6 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = parse_spa/ParseUI.framework; sourceTree = "<group>"; };
@@ -137,6 +153,17 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
+		DE4BBF7D1C35FDB6009B9CBF /* DisplayCells */ = {
+			isa = PBXGroup;
+			children = (
+				DE4BBF7E1C35FE1F009B9CBF /* FirstDisplayCell.swift */,
+				DE4BBF7F1C35FE1F009B9CBF /* FirstDisplayCell.xib */,
+				DE4BBF821C35FE78009B9CBF /* SecondDisplayCell.swift */,
+				DE4BBF831C35FE78009B9CBF /* SecondDisplayCell.xib */,
+			);
+			name = DisplayCells;
+			sourceTree = "<group>";
+		};
 		DE9B5FA81C20C3E900F3A53D = {
 			isa = PBXGroup;
 			children = (
@@ -163,9 +190,13 @@
 		DE9B5FB31C20C3E900F3A53D /* parse_spa */ = {
 			isa = PBXGroup;
 			children = (
+				DEC4D4981C45AFAD0021557A /* CommentCells */,
+				DE4BBF7D1C35FDB6009B9CBF /* DisplayCells */,
 				DE9B5FB41C20C3E900F3A53D /* AppDelegate.swift */,
 				DE9B5FB61C20C3E900F3A53D /* ViewController.swift */,
 				DE2EFAFA1C306E3A00214931 /* DisplayController.swift */,
+				DEC4D49D1C47B6700021557A /* CommentController.swift */,
+				DEC4D49F1C493B140021557A /* AddController.swift */,
 				DE9B5FB81C20C3E900F3A53D /* Main.storyboard */,
 				DE9B5FBB1C20C3E900F3A53D /* Assets.xcassets */,
 				DE9B5FBD1C20C3E900F3A53D /* LaunchScreen.storyboard */,
@@ -190,6 +221,15 @@
 				DE9B5FD61C20C3EA00F3A53D /* Info.plist */,
 			);
 			path = parse_spaUITests;
+			sourceTree = "<group>";
+		};
+		DEC4D4981C45AFAD0021557A /* CommentCells */ = {
+			isa = PBXGroup;
+			children = (
+				DEC4D4991C45B0840021557A /* CommentCell.swift */,
+				DEC4D49A1C45B0840021557A /* CommentCell.xib */,
+			);
+			name = CommentCells;
 			sourceTree = "<group>";
 		};
 		DEDAF2B71C22277F00A3FFB6 /* Parse */ = {
@@ -324,9 +364,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4BBF851C35FE78009B9CBF /* SecondDisplayCell.xib in Resources */,
 				DE9B5FBF1C20C3E900F3A53D /* LaunchScreen.storyboard in Resources */,
 				DE9B5FBC1C20C3E900F3A53D /* Assets.xcassets in Resources */,
+				DEC4D49C1C45B0850021557A /* CommentCell.xib in Resources */,
 				DE9B5FBA1C20C3E900F3A53D /* Main.storyboard in Resources */,
+				DE4BBF811C35FE1F009B9CBF /* FirstDisplayCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,12 +395,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEE282181C328E1A004E61E9 /* LoginViewController.swift in Sources */,
+				DEC4D49E1C47B6700021557A /* CommentController.swift in Sources */,
 				DE4BBF7C1C32CB6E009B9CBF /* SignUpViewController.swift in Sources */,
+				DEC4D4A01C493B140021557A /* AddController.swift in Sources */,
 				DEE282121C324039004E61E9 /* LoginText.swift in Sources */,
 				DE9B5FB71C20C3E900F3A53D /* ViewController.swift in Sources */,
 				DEE282161C328DED004E61E9 /* ColorDefinition.swift in Sources */,
+				DEC4D49B1C45B0850021557A /* CommentCell.swift in Sources */,
 				DE9B5FB51C20C3E900F3A53D /* AppDelegate.swift in Sources */,
 				DE2EFAFB1C306E3A00214931 /* DisplayController.swift in Sources */,
+				DE4BBF841C35FE78009B9CBF /* SecondDisplayCell.swift in Sources */,
+				DE4BBF801C35FE1F009B9CBF /* FirstDisplayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

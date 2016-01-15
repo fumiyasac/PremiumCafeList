@@ -38,7 +38,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             
             //非ログイン時の表記を設定
             self.guidanceText = LoginText.notLoginContract()
-            self.goDisplayButton.setTitle("会員登録をする", forState: .Normal)
+            self.goDisplayButton.setTitle("会員登録orログイン", forState: .Normal)
         
         //ログインをしている場合
         } else {
@@ -67,19 +67,6 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        /* --------------------
-        //Parseテスト用のコード（Object has been saved.がコンソールに表示されれば通信が成功）
-        let testObject = PFObject(className: "TestObject")
-        testObject["testKey"] = "testValue"
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("Object has been saved.")
-        }
-        --------------------*/
-        
-        //@todo:他の処理用のコードを記述
-        
     }
     
     //レイアウト処理が完了した際の処理
@@ -112,25 +99,9 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     func displayAppliContents() {
         
         //セグエの実行時に値を渡す
-        let testData : AnyObject = ["testData" : "カフェ情報"]
-        performSegueWithIdentifier("goDisplay", sender: testData)
+        performSegueWithIdentifier("goDisplay", sender: nil)
     }
-    
-    //segueを呼び出したときに呼ばれるメソッド
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        //セグエ名で判定を行う
-        if segue.identifier == "goDisplay" {
-            
-            //遷移先のコントローラーの変数を用意する
-            let displayController = segue.destinationViewController as! DisplayController
-            
-            //遷移先のコントローラーに渡したい変数を格納（型を合わせてね）
-            displayController.testData = sender
-        }
-    }
-    
-    
     //ParseUIのログイン機能を呼び出す実装を行う
     func loginParseUiContents() {
         

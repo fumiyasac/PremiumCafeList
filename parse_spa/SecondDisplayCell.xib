@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SecondDisplayCell" id="KGk-i7-Jjw" customClass="SecondDisplayCell" customModule="parse_spa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MCP-4X-AG4">
+                        <rect key="frame" x="8" y="8" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="bSM-R6-6P3"/>
+                            <constraint firstAttribute="height" constant="60" id="hOW-6N-cbW"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyf-0y-SFl">
+                        <rect key="frame" x="76" y="8" width="216" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="xqd-nh-IRH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.10.10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nn-7d-ILl">
+                        <rect key="frame" x="76" y="31" width="80" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="Zmy-jP-AXr"/>
+                            <constraint firstAttribute="width" constant="80" id="y4h-f3-kBT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtQ-47-We6">
+                        <rect key="frame" x="76" y="51" width="70" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="B5G-l5-JLR"/>
+                            <constraint firstAttribute="height" constant="16" id="X2p-5k-rzW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9A-Za-Wa5">
+                        <rect key="frame" x="151" y="51" width="70" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="aA2-Mz-Wwq"/>
+                            <constraint firstAttribute="width" constant="70" id="euU-uk-EAD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MCP-4X-AG4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="0ar-tJ-8Jd"/>
+                    <constraint firstItem="6nn-7d-ILl" firstAttribute="leading" secondItem="gtQ-47-We6" secondAttribute="leading" id="AzV-6r-5tW"/>
+                    <constraint firstItem="p9A-Za-Wa5" firstAttribute="top" secondItem="6nn-7d-ILl" secondAttribute="bottom" constant="4" id="Bpv-a6-ms2"/>
+                    <constraint firstItem="kyf-0y-SFl" firstAttribute="leading" secondItem="MCP-4X-AG4" secondAttribute="trailing" constant="8" id="Ewn-3r-Row"/>
+                    <constraint firstItem="MCP-4X-AG4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Ogc-dw-cpw"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kyf-0y-SFl" secondAttribute="trailing" constant="20" id="VuC-Cy-q6W"/>
+                    <constraint firstItem="p9A-Za-Wa5" firstAttribute="leading" secondItem="gtQ-47-We6" secondAttribute="trailing" constant="5" id="dOY-Da-y26"/>
+                    <constraint firstItem="6nn-7d-ILl" firstAttribute="top" secondItem="kyf-0y-SFl" secondAttribute="bottom" constant="3" id="fjU-HL-AfH"/>
+                    <constraint firstItem="6nn-7d-ILl" firstAttribute="leading" secondItem="kyf-0y-SFl" secondAttribute="leading" id="gVW-mn-UZk"/>
+                    <constraint firstItem="6nn-7d-ILl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="31" id="k6Z-G2-3oB"/>
+                    <constraint firstItem="gtQ-47-We6" firstAttribute="top" secondItem="6nn-7d-ILl" secondAttribute="bottom" constant="4" id="vUi-4U-cCH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="secondCafeCommentAverage" destination="p9A-Za-Wa5" id="vh9-3h-Gfk"/>
+                <outlet property="secondCafeCommentSum" destination="gtQ-47-We6" id="3he-Za-Pcd"/>
+                <outlet property="secondCafeImageView" destination="MCP-4X-AG4" id="ZPU-2m-WQv"/>
+                <outlet property="secondCafeName" destination="kyf-0y-SFl" id="Umh-7d-9iz"/>
+                <outlet property="secondCafePublishDate" destination="6nn-7d-ILl" id="ARf-7t-vny"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
