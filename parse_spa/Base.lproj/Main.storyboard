@@ -188,7 +188,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コメント一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9b-HU-aZS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cafe Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9b-HU-aZS">
                                 <rect key="frame" x="0.0" y="20" width="600" height="30"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -294,7 +294,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cS1-OU-ysR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cafe Comment Add" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cS1-OU-ysR">
                                 <rect key="frame" x="0.0" y="20" width="600" height="30"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -354,9 +354,13 @@
                                     <segment title="プレミアム"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="starChangeAction:" destination="4v0-5t-w6H" eventType="valueChanged" id="8RZ-wM-1wc"/>
+                                </connections>
                             </segmentedControl>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kUD-AC-wUt">
                                 <rect key="frame" x="98" y="199" width="482" height="140"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="Ltv-CB-aNd"/>
                                 </constraints>
@@ -369,18 +373,30 @@
                                 <items>
                                     <barButtonItem title="⇦ back" id="BN9-0m-Jda">
                                         <color key="tintColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="4v0-5t-w6H" id="Lq6-WU-8jf"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="tNj-tC-S6O"/>
                                     <barButtonItem systemItem="camera" id="srj-dh-fXI">
                                         <color key="tintColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="cameraButtonAction:" destination="4v0-5t-w6H" id="s9W-sc-oSo"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ykB-gh-tKP"/>
                                     <barButtonItem systemItem="add" id="3J8-QE-1Ic">
                                         <color key="tintColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="addCommentAction:" destination="4v0-5t-w6H" id="aO2-aM-CNj"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="cXy-aw-bc1"/>
                                     <barButtonItem systemItem="trash" id="FJa-jS-ufz">
                                         <color key="tintColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="deleteCommentAction:" destination="4v0-5t-w6H" id="U7X-8Q-Tm1"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -393,6 +409,7 @@
                             <constraint firstItem="Ikz-4V-chN" firstAttribute="top" secondItem="kUD-AC-wUt" secondAttribute="top" id="6As-1D-t3n"/>
                             <constraint firstItem="lz8-nQ-acS" firstAttribute="top" secondItem="NjR-Hr-VBB" secondAttribute="bottom" constant="10" id="6ic-fL-95w"/>
                             <constraint firstItem="VS3-FT-ikF" firstAttribute="leading" secondItem="Bmo-bx-tcl" secondAttribute="leadingMargin" id="7ec-cw-AlL"/>
+                            <constraint firstItem="eKq-4Y-40z" firstAttribute="leading" secondItem="83O-cz-few" secondAttribute="trailing" constant="8" id="BLR-m1-wGv"/>
                             <constraint firstItem="VS3-FT-ikF" firstAttribute="leading" secondItem="83O-cz-few" secondAttribute="leading" id="EpH-rq-vkr"/>
                             <constraint firstItem="Ikz-4V-chN" firstAttribute="top" secondItem="Bmo-bx-tcl" secondAttribute="top" constant="199" id="GQw-uB-Pi7"/>
                             <constraint firstItem="VS3-FT-ikF" firstAttribute="leading" secondItem="Ikz-4V-chN" secondAttribute="leading" id="IJU-sP-h1u"/>
@@ -413,9 +430,24 @@
                             <constraint firstItem="cS1-OU-ysR" firstAttribute="top" secondItem="2Pb-RQ-rvR" secondAttribute="bottom" id="wUO-V5-4sB"/>
                             <constraint firstItem="iKD-jo-OKj" firstAttribute="top" secondItem="Vff-89-cq5" secondAttribute="bottom" id="wVc-5Z-MTG"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="atc-68-3X6" appends="YES" id="AgV-Mm-397"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="cafeCommentImageView" destination="kUD-AC-wUt" id="iUa-5q-BMe"/>
+                        <outlet property="cafeCommentLabel" destination="cS1-OU-ysR" id="YaH-xo-DDi"/>
+                        <outlet property="cafeCommentStar" destination="eKq-4Y-40z" id="amR-8c-vef"/>
+                        <outlet property="cafeCommnetField" destination="lz8-nQ-acS" id="fED-Kk-S4V"/>
+                        <outlet property="deleteCommentButton" destination="FJa-jS-ufz" id="az5-Bx-QB8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cu2-GY-e5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="atc-68-3X6">
+                    <connections>
+                        <action selector="hideKeyboardAction:" destination="4v0-5t-w6H" id="l8t-BC-OGQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2426" y="220"/>
         </scene>

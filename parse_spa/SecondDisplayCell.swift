@@ -14,8 +14,8 @@ class SecondDisplayCell: UITableViewCell {
     @IBOutlet var secondCafeImageView: UIImageView!
     @IBOutlet var secondCafeName: UILabel!
     @IBOutlet var secondCafePublishDate: UILabel!
+    @IBOutlet var secondCafeCommentAmount: UILabel!
     @IBOutlet var secondCafeCommentSum: UILabel!
-    @IBOutlet var secondCafeCommentAverage: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

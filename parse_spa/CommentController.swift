@@ -13,17 +13,23 @@ import Parse
 
 class CommentController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    //詳細表示
+    //コメント編集フラグ
+    var editFlag: Bool = false
+    
+    //コメント画像データ
+    var commentImage: UIImage? = nil
+    
+    //対象のCafeのobjectId
+    var targetCafeObjectId: String!
+
+    //カフェの詳細データ
+    var cafeDetaillData: AnyObject!
+    
+    //IBOutletでの接続パーツ
     @IBOutlet var cafeDetailTitle: UILabel!
     @IBOutlet var cafeDetailImageView: UIImageView!
     @IBOutlet var cafeDetailCatchCopy: UILabel!
     @IBOutlet var cafeDetailIntroduction: UILabel!
-    
-    //編集フラグ
-    var editFlag: Bool = false
-    
-    //カフェの詳細データ
-    var cafeDetaillData: AnyObject!
     
     //コメント用テーブルビュー
     @IBOutlet var cafeDetailCommentTable: UITableView!
@@ -34,17 +40,26 @@ class CommentController: UIViewController, UITableViewDelegate, UITableViewDataS
     //テーブルビューの要素数
     let sectionCount: Int = 1
     
+    //コメントの平均値算出用
+    var amountStar: Int!
+    
     //出現中の処理
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
+        
+        //一旦平均算出用の配列を全て空にする
+        self.amountStar = 0
         
         //Parseからのデータを取得してテーブルに表示する
         self.loadParseCommentData()
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //カフェ詳細データを表示
+        self.targetCafeObjectId = self.cafeDetaillData.valueForKey("objectId") as? String
+        
         let dispImgFile: PFFile = (self.cafeDetaillData.valueForKey("CafeImage") as? PFFile)!
         
         dispImgFile.getDataInBackgroundWithBlock {
@@ -103,6 +118,7 @@ class CommentController: UIViewController, UITableViewDelegate, UITableViewDataS
                 if error == nil {
                     let image = UIImage(data: imageData!)
                     cell!.commentImageView.image = image
+                    self.commentImage = image
                 }
         }
             
@@ -124,12 +140,34 @@ class CommentController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         //セグエの実行時に値を渡す
-        /*
         let cafeCommentData: AnyObject = self.cafeCommentArray.objectAtIndex(indexPath.row)
+        
         if PFUser.currentUser()!.username! == cafeCommentData.valueForKey("commentUsername") as? String {
+            self.editFlag = true
             performSegueWithIdentifier("goAddComment", sender: cafeCommentData)
         }
-        */
+    }
+    
+    //segueを呼び出したときに呼ばれるメソッド
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        //コメント表示画面へ行く前に詳細データを渡す
+        if segue.identifier == "goAddComment" {
+
+            let addController = segue.destinationViewController as! AddController
+            addController.cafeMasterObjectID = self.targetCafeObjectId
+            
+            //編集の際は編集対象のobjectIdと編集フラグを設定する
+            if self.editFlag == true {
+                
+                addController.editCommentFlag = self.editFlag
+                
+                addController.targetObjectID = sender!.valueForKey("objectId") as! String
+                addController.cafeCommentDetail = sender!.valueForKey("CafeCommentDetail") as! String
+                addController.cafeCommentStarNumber = sender!.valueForKey("CafeCommentStar") as! Int - 1
+                addController.cafeCommentPFFile = (sender!.valueForKey("CafeCommentImage") as? PFFile)!
+            }
+        }
     }
     
     //戻るボタンのアクション
@@ -139,7 +177,8 @@ class CommentController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     //コメント新規追加
     @IBAction func commnetAddAction(sender: UIBarButtonItem) {
-        
+        self.editFlag = false
+        performSegueWithIdentifier("goAddComment", sender: nil)
     }
     
     //データのリロード
@@ -150,6 +189,7 @@ class CommentController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         //parse.comのデータベースからデータを取得する
         let query:PFQuery = PFQuery(className: "CafeTransactionComment")
+        query.whereKey("CafeMasterObjectId", equalTo: self.targetCafeObjectId)
         
         //orderByAscendingでカラムに対して昇順で並べる指定
         query.orderByDescending("createdAt")
@@ -172,20 +212,53 @@ class CommentController: UIViewController, UITableViewDelegate, UITableViewDataS
                         
                         //取得したオブジェクトをメンバ変数へ格納
                         self.cafeCommentArray.addObject(object)
+                        let commentStar: Int = object.valueForKey("CafeCommentStar") as! Int
+                        self.amountStar = self.amountStar + commentStar
                     }
                     
                     //テーブルビューをリロードする
                     self.cafeDetailCommentTable.reloadData()
                 }
                 
+                let commentAmount: Int = self.amountStar
+                let commentSum: Int = self.cafeCommentArray.count as Int
+                
+                //Debug.
+                //print(コメント内の総ポイント数: \(commentAmount))
+                //print(コメント内の総数:  \(commentSum))
+                
+                self.updateCafeMasterAverage(
+                    self.targetCafeObjectId,
+                    targetAmount: commentAmount,
+                    targetSum: commentSum
+                )
+                
             } else {
                 
                 //異常処理の際にはエラー内容の表示
                 print("Error: \(error!) \(error!.userInfo)")
             }
-            
+            //------ クロージャー内の処理：ここまで↑ -----
         }
-        //------ クロージャー内の処理：ここまで↑ -----
+
+    }
+    
+    //カフェマスタのデータを更新
+    func updateCafeMasterAverage(targetObjectId: String, targetAmount: Int, targetSum: Int) {
+        
+        //parse.comのデータベースからデータを取得する
+        let query:PFQuery = PFQuery(className: "CafeMaster")
+        query.getObjectInBackgroundWithId(targetObjectId, block: { object, error in
+            
+            object?["commentAmount"] = targetAmount
+            object?["commentSum"] = targetSum
+            
+            object?.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                
+                //Debug.
+                //print("CafeMaster Object id: \(targetObjectId) has been updateed.")
+            }
+        })
     }
     
     override func didReceiveMemoryWarning() {

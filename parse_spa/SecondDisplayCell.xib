@@ -77,7 +77,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="secondCafeCommentAverage" destination="p9A-Za-Wa5" id="vh9-3h-Gfk"/>
+                <outlet property="secondCafeCommentAmount" destination="p9A-Za-Wa5" id="SMj-Qf-a6O"/>
                 <outlet property="secondCafeCommentSum" destination="gtQ-47-We6" id="3he-Za-Pcd"/>
                 <outlet property="secondCafeImageView" destination="MCP-4X-AG4" id="ZPU-2m-WQv"/>
                 <outlet property="secondCafeName" destination="kyf-0y-SFl" id="Umh-7d-9iz"/>

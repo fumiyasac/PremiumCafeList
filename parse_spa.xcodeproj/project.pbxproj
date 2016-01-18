@@ -151,6 +151,7 @@
 				DEE282151C328DEC004E61E9 /* ColorDefinition.swift */,
 			);
 			name = Libraries;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		DE4BBF7D1C35FDB6009B9CBF /* DisplayCells */ = {
@@ -167,7 +168,6 @@
 		DE9B5FA81C20C3E900F3A53D = {
 			isa = PBXGroup;
 			children = (
-				DE2EFB011C30C3D700214931 /* Libraries */,
 				DEDAF2B71C22277F00A3FFB6 /* Parse */,
 				DEDAF2B81C22278700A3FFB6 /* Frameworks */,
 				DE9B5FB31C20C3E900F3A53D /* parse_spa */,
@@ -190,8 +190,8 @@
 		DE9B5FB31C20C3E900F3A53D /* parse_spa */ = {
 			isa = PBXGroup;
 			children = (
-				DEC4D4981C45AFAD0021557A /* CommentCells */,
-				DE4BBF7D1C35FDB6009B9CBF /* DisplayCells */,
+				DEC4D4A21C4ABB160021557A /* Components */,
+				DE2EFB011C30C3D700214931 /* Libraries */,
 				DE9B5FB41C20C3E900F3A53D /* AppDelegate.swift */,
 				DE9B5FB61C20C3E900F3A53D /* ViewController.swift */,
 				DE2EFAFA1C306E3A00214931 /* DisplayController.swift */,
@@ -230,6 +230,15 @@
 				DEC4D49A1C45B0840021557A /* CommentCell.xib */,
 			);
 			name = CommentCells;
+			sourceTree = "<group>";
+		};
+		DEC4D4A21C4ABB160021557A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DEC4D4981C45AFAD0021557A /* CommentCells */,
+				DE4BBF7D1C35FDB6009B9CBF /* DisplayCells */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 		DEDAF2B71C22277F00A3FFB6 /* Parse */ = {

@@ -32,11 +32,16 @@ class DisplayController: UIViewController, UITableViewDelegate, UITableViewDataS
     //検索文字列
     var targetString: String = ""
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    //出現中の処理
+    override func viewWillAppear(animated: Bool) {
         
         //Parseからのデータを取得してテーブルに表示する
         self.loadParseData()
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         //テーブルビューのデリゲート
         self.cafeTableView.delegate = self
@@ -53,13 +58,6 @@ class DisplayController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         let nibSecond:UINib = UINib(nibName: "SecondDisplayCell", bundle: nil)
         self.cafeTableView.registerNib(nibSecond, forCellReuseIdentifier: "SecondDisplayCell")
-    }
-
-    //出現後の処理
-    override func viewDidAppear(animated: Bool) {
-        
-        //Parseからのデータを取得してテーブルに表示する
-        self.loadParseData()
     }
     
     //検索バーの関する設定一覧
@@ -114,7 +112,10 @@ class DisplayController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell!.firstCafeName.text = cafe.valueForKey("name") as? String
             
             cell!.firstCafeCommentSum.text = String(cafe.valueForKey("commentSum")!) + "コメント"
-            cell!.firstCafeCommentAverage.text = "平均" + String(cafe.valueForKey("commentAverage")!) + "点"
+            
+            let commentAmountValue: Int = cafe.valueForKey("commentAmount") as! Int
+            cell!.firstCafeCommentAmount.text = "合計" + (String(commentAmountValue) as String) + "点"
+            
             cell!.firstCafePublishDate.text = cafe.valueForKey("publishDate") as? String
             
             cell!.selectionStyle = UITableViewCellSelectionStyle.None
@@ -143,7 +144,10 @@ class DisplayController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell!.secondCafeName.text = cafe.valueForKey("name") as? String
             
             cell!.secondCafeCommentSum.text = String(cafe.valueForKey("commentSum")!) + "コメント"
-            cell!.secondCafeCommentAverage.text = "平均" + String(cafe.valueForKey("commentAverage")!) + "点"
+            
+            let commentAmountValue: Double = cafe.valueForKey("commentAmount") as! Double
+            cell!.secondCafeCommentAmount.text = "合計" + (String(commentAmountValue) as String) + "点"
+            
             cell!.secondCafePublishDate.text = cafe.valueForKey("publishDate") as? String
             
             cell!.selectionStyle = UITableViewCellSelectionStyle.None
@@ -247,9 +251,9 @@ class DisplayController: UIViewController, UITableViewDelegate, UITableViewDataS
                 //異常処理の際にはエラー内容の表示
                 print("Error: \(error!) \(error!.userInfo)")
             }
-            
+            //------ クロージャー内の処理：ここまで↑ -----
         }
-        //------ クロージャー内の処理：ここまで↑ -----
+        
     }
     
     override func didReceiveMemoryWarning() {
