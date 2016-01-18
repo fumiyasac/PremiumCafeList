@@ -145,7 +145,7 @@ class DisplayController: UIViewController, UITableViewDelegate, UITableViewDataS
             
             cell!.secondCafeCommentSum.text = String(cafe.valueForKey("commentSum")!) + "コメント"
             
-            let commentAmountValue: Double = cafe.valueForKey("commentAmount") as! Double
+            let commentAmountValue: Int = cafe.valueForKey("commentAmount") as! Int
             cell!.secondCafeCommentAmount.text = "合計" + (String(commentAmountValue) as String) + "点"
             
             cell!.secondCafePublishDate.text = cafe.valueForKey("publishDate") as? String
