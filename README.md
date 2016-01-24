@@ -13,7 +13,7 @@ Parse.comとの導入から実装の手順や解説に関しては、下記Qiita
 
 各章の目次：
 
-+ (Chapter1:導入と疎通の確認まで)[http://qiita.com/fumiyasac@github/items/5f0e77728221aade5027]
-+ (Chapter2:ParseUIを利用した基本的なアカウント認証処理)[http://qiita.com/fumiyasac@github/items/2f13f48bda7f945d39d5]
-+ (Chapter3:登録データをUITableViewに一覧＆詳細表示と追加・変更・削除に関する処理)[http://qiita.com/fumiyasac@github/items/c08210196db894b322e2]
++ [Chapter1:導入と疎通の確認まで](http://qiita.com/fumiyasac@github/items/5f0e77728221aade5027)
++ [Chapter2:ParseUIを利用した基本的なアカウント認証処理](http://qiita.com/fumiyasac@github/items/2f13f48bda7f945d39d5)
++ [Chapter3:登録データをUITableViewに一覧＆詳細表示と追加・変更・削除に関する処理](http://qiita.com/fumiyasac@github/items/c08210196db894b322e2)
 
